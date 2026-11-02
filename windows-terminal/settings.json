@@ -38,7 +38,7 @@
       "intenseTextStyle": "bright",
       "scrollbarState": "hidden",
       "bellStyle": "none",
-      "backgroundImage": "C:\\Users\\csinf\\.config\\fastfetch\\logo-bw.png",
+      "backgroundImage": "%USERPROFILE%\\.config\\fastfetch\\logo-bw.png",
       "backgroundImageOpacity": 0.06,
       "backgroundImageAlignment": "bottomRight",
       "backgroundImageStretchMode": "uniform"

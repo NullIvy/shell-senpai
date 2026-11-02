@@ -8,7 +8,7 @@ function fetch {
   $q = Get-Content "$HOME\.config\fastfetch\quotes.txt" | Where-Object { $_.Trim() } | Get-Random
   $q = $q.Replace('\','\\').Replace('"','\"')
   $t = [IO.File]::ReadAllText("$HOME\.config\fastfetch\template.jsonc")
-  $t = $t.Replace('__GREET__', "$i  $g, $env:USERNAME").Replace('__QUOTE__', $q)
+  $t = $t.Replace('__GREET__', "$i  $g, $env:USERNAME").Replace('__QUOTE__', $q).Replace('__LOGO__', "$HOME/.config/fastfetch/logo-bw.png".Replace('\','/'))
   $tmp = "$env:TEMP\fastfetch-now.jsonc"
   [IO.File]::WriteAllText($tmp, $t)
   fastfetch -c $tmp

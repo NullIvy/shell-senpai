@@ -73,6 +73,9 @@ Set-Content "$docs\PowerShell\Microsoft.PowerShell_profile.ps1" ". `"$HOME\.conf
 Set-Content "$docs\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" ". `"$HOME\.config\powershell\profile.ps1`""
 Copy-Item .\clink\*.lua "$env:LOCALAPPDATA\clink\" -Force
 Copy-Item .\windows-terminal\settings.json "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Force
+$tpl = "$HOME\.config\fastfetch\template.jsonc"
+$logo = "$HOME\.config\fastfetch\logo-bw.png".Replace('\', '/')
+[IO.File]::WriteAllText($tpl, [IO.File]::ReadAllText($tpl).Replace('__LOGO__', $logo))
 clink autorun install
 ```
 

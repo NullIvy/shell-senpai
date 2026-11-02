@@ -34,6 +34,8 @@ if tf then
   local t = tf:read("*a"); tf:close()
   t = plain_replace(t, "__GREET__", g)
   t = plain_replace(t, "__QUOTE__", q)
+  local logo = (home .. "/.config/fastfetch/logo-bw.png"):gsub("\\", "/")
+  t = plain_replace(t, "__LOGO__", logo)
   local tmp = os.getenv("TEMP") .. "\\fastfetch-cmd.jsonc"
   local out = io.open(tmp, "w"); out:write(t); out:close()
   os.execute("cls")
