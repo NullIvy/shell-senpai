@@ -4,6 +4,20 @@ Notice me, Shell Senpai. Kalimat itu mungkin terdengar bercanda, tapi memang beg
 
 Repo ini berisi seluruh dotfiles yang saya pakai di Windows Terminal. Tiga shell sekaligus ikut diupgrade di sini, yaitu PowerShell 7, Windows PowerShell 5.1, dan Command Prompt. Semuanya disimpan di satu tempat supaya kalau suatu hari laptop harus diinstal ulang, saya cukup clone repo ini dan dalam beberapa menit semuanya kembali seperti semula. Anggap saja ini save file untuk terminal kamu.
 
+## Preview
+
+Daripada panjang lebar menjelaskan, lebih baik lihat langsung hasilnya. Tangkapan layar pertama adalah PowerShell 7 yang menjadi shell utama saya sehari hari.
+
+![PowerShell 7](screenshots/pwsh7.png)
+
+Selanjutnya ada Windows PowerShell 5.1, versi bawaan Windows yang ternyata bisa tampil sama kerennya berkat profile yang dipakai bersama.
+
+![Windows PowerShell 5.1](screenshots/windows-powershell.png)
+
+Terakhir ada Command Prompt, shell paling klasik yang biasanya polos tanpa warna, tapi di sini ikut naik level berkat bantuan Clink.
+
+![Command Prompt](screenshots/cmd.png)
+
 ## Tentang Proyek Ini
 
 Shell Senpai bukan aplikasi baru, melainkan kumpulan konfigurasi yang menyatukan beberapa tools open source menjadi satu tampilan yang konsisten. Fastfetch dipakai untuk menampilkan informasi sistem, Starship untuk prompt, Clink untuk menghidupkan Command Prompt, dan sisanya adalah script PowerShell buatan sendiri yang mewarnai output command sehari hari. Semuanya dibalut tema Ocean Deep dengan gradasi biru laut yang kalem di mata, cocok untuk sesi ngoding panjang sampai lupa waktu.
