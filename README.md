@@ -89,4 +89,4 @@ Hampir semua bagian Shell Senpai bisa dimodifikasi sesuai selera, layaknya skin 
 
 Proyek ini awalnya cuma iseng karena bosan melihat terminal yang itu itu saja, tapi ternyata terminal yang enak dilihat bikin saya jauh lebih betah ngoprek berlama lama. Kalau kamu menemukan bug atau punya ide untuk membuatnya lebih keren, silakan buka issue atau kirim pull request, karena party yang lengkap selalu lebih seru daripada solo queue. Semua tools yang dipakai di sini adalah proyek open source luar biasa, jadi kredit sepenuhnya untuk para pembuat Fastfetch, Starship, Clink, zoxide, dan fzf.
 
-Dibuat dengan secangkir kopi dan terlalu banyak kali mengetik cls oleh Rizki. GG and have fun.
+Dibuat dengan secangkir kopi dan terlalu banyak kali mengetik cls oleh NullIvy. GG and have fun.
