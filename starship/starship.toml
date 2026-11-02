@@ -1,0 +1,70 @@
+format = """
+[\ue0b6](#0B3C5D)\
+$os\
+$username\
+[\ue0b0](bg:#1D6A96 fg:#0B3C5D)\
+$directory\
+[\ue0b0](bg:#2E8BC0 fg:#1D6A96)\
+$git_branch\
+$git_status\
+$python\
+$nodejs\
+[\ue0b0](bg:#4FB3D9 fg:#2E8BC0)\
+$time\
+[\ue0b4](fg:#4FB3D9)\
+$cmd_duration\
+$line_break$character"""
+
+[os]
+disabled = false
+style = "bg:#0B3C5D fg:#E0F7FA"
+format = "[ $symbol]($style)"
+[os.symbols]
+Windows = "\uf17a"
+
+[username]
+show_always = true
+style_user = "bg:#0B3C5D fg:#E0F7FA bold"
+style_root = "bg:#0B3C5D fg:#E0F7FA bold"
+format = "[ $user ]($style)"
+
+[directory]
+style = "bg:#1D6A96 fg:#E0F7FA"
+format = "[ \uf07c $path ]($style)"
+truncation_length = 2
+fish_style_pwd_dir_length = 1
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = "\ue725"
+style = "bg:#2E8BC0 fg:#0B3C5D"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:#2E8BC0 fg:#0B3C5D"
+format = "[($all_status$ahead_behind )]($style)"
+
+[python]
+symbol = "\ue73c"
+style = "bg:#2E8BC0 fg:#0B3C5D"
+format = "[ $symbol ($version)(\\($virtualenv\\)) ]($style)"
+
+[nodejs]
+symbol = "\ue718"
+style = "bg:#2E8BC0 fg:#0B3C5D"
+format = "[ $symbol ($version) ]($style)"
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "bg:#4FB3D9 fg:#0B3C5D"
+format = "[ \uf017 $time ]($style)"
+
+[cmd_duration]
+min_time = 2000
+style = "fg:#85D4E3"
+format = "[ took $duration]($style)"
+
+[character]
+success_symbol = "[ ❯](bold #85D4E3)"
+error_symbol = "[ ❯](bold #FF6B6B)"

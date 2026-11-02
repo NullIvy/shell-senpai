@@ -1,0 +1,133 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [],
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "keybindings": [
+    {
+      "id": "Terminal.CopyToClipboard",
+      "keys": "ctrl+c"
+    },
+    {
+      "id": "Terminal.PasteFromClipboard",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "Terminal.DuplicatePaneAuto",
+      "keys": "alt+shift+d"
+    }
+  ],
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "font": {
+        "face": "JetBrainsMono Nerd Font",
+        "size": 11
+      },
+      "colorScheme": "Ocean Deep",
+      "opacity": 92,
+      "useAcrylic": true,
+      "padding": "14, 10",
+      "cursorShape": "bar",
+      "intenseTextStyle": "bright",
+      "scrollbarState": "hidden",
+      "bellStyle": "none",
+      "backgroundImage": "C:\\Users\\csinf\\.config\\fastfetch\\logo-bw.png",
+      "backgroundImageOpacity": 0.06,
+      "backgroundImageAlignment": "bottomRight",
+      "backgroundImageStretchMode": "uniform"
+    },
+    "list": [
+      {
+        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoLogo",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": false,
+        "name": "Windows PowerShell"
+      },
+      {
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "Command Prompt"
+      },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": false,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure"
+      },
+      {
+        "guid": "{c804af33-a879-5081-95c1-37b0889a919c}",
+        "hidden": false,
+        "name": "Developer Command Prompt for VS 2022",
+        "source": "Windows.Terminal.VisualStudio"
+      },
+      {
+        "guid": "{aadaf4b5-9076-570e-89d5-d0ee308a93b8}",
+        "hidden": false,
+        "name": "Developer PowerShell for VS 2022",
+        "source": "Windows.Terminal.VisualStudio"
+      },
+      {
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "hidden": false,
+        "name": "PowerShell",
+        "source": "Windows.Terminal.PowershellCore",
+        "commandline": "pwsh.exe -NoLogo"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "name": "Ocean Deep",
+      "background": "#0D1B2A",
+      "foreground": "#E0F7FA",
+      "cursorColor": "#4FB3D9",
+      "selectionBackground": "#1D6A96",
+      "black": "#0B1622",
+      "red": "#FF6B6B",
+      "green": "#7DDC8C",
+      "yellow": "#F0C674",
+      "blue": "#4FB3D9",
+      "purple": "#C792EA",
+      "cyan": "#85D4E3",
+      "white": "#CFE8F0",
+      "brightBlack": "#3E5466",
+      "brightRed": "#FF8A8A",
+      "brightGreen": "#9FE8AB",
+      "brightYellow": "#F5D68F",
+      "brightBlue": "#7CC8E8",
+      "brightPurple": "#D7AEF2",
+      "brightCyan": "#B1F0F7",
+      "brightWhite": "#FFFFFF"
+    }
+  ],
+  "themes": [
+    {
+      "name": "Ocean",
+      "window": {
+        "useMica": true,
+        "applicationTheme": "dark"
+      },
+      "tabRow": {
+        "unfocusedBackground": "#0B1622FF",
+        "background": "#0B1622FF"
+      },
+      "tab": {
+        "unfocusedBackground": "#0B162200",
+        "showCloseButton": "hover",
+        "background": "#0D1B2AFF"
+      }
+    }
+  ],
+  "theme": "Ocean",
+  "initialCols": 130,
+  "initialRows": 34,
+  "tabWidthMode": "titleLength"
+}

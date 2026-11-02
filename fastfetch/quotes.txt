@@ -1,0 +1,102 @@
+cat > ~/.config/fastfetch/quotes.txt <<'EOF'
+It works on my machine. Ship the machine.
+There's no place like 127.0.0.1.
+It's not a bug, it's an undocumented feature.
+Have you tried turning it off and on again?
+It's always DNS.
+Code never lies. Comments sometimes do.
+Weeks of coding can save you hours of planning.
+First, solve the problem. Then, write the code.
+Delete code. It's the only code with zero bugs.
+Real programmers count from 0.
+Talk is cheap. Show me the commit.
+Debugging is being the detective in a crime you committed.
+99 little bugs in the code. Fix one, 127 little bugs in the code.
+git commit -m "fixed it for real this time"
+git push --force and pray.
+Friday deploy? Bold of you.
+Never deploy on a Friday. Never.
+Production is the best testing environment. Just kidding. Please don't.
+Backups are cheap. Regret is expensive.
+If it's not in version control, it doesn't exist.
+Read the logs. The logs know everything.
+The cloud is just someone else's computer.
+Passwords are like underwear: change them often.
+Security through obscurity is not security.
+Patch early, patch often.
+Every packet tells a story.
+A firewall a day keeps the hackers away.
+Trust no input. Sanitize everything.
+Least privilege. Always.
+Zero trust, zero problems.
+sudo make me a sandwich.
+chmod 777 is not a solution, it's a confession.
+rm -rf / is not a cleanup strategy.
+Linux is user friendly. It's just picky about its friends.
+Talk to the terminal, it listens.
+Keep calm and grep on.
+Life is short. Use aliases.
+Automate the boring stuff, then automate the automation.
+If you do it twice, script it.
+The best error message is the one that never shows up.
+Coffee in, code out.
+Sleep is just a long garbage collection.
+A clean codebase is a happy codebase.
+Naming things is the hardest problem in computer science.
+Readability counts.
+Simple is better than complex.
+Make it work, make it right, make it fast.
+Premature optimization is the root of all frustration.
+Refactor today, thank yourself tomorrow.
+Write code as if the next maintainer knows where you live.
+Comment the why, not the what.
+Tests are the documentation that never lies.
+Green tests, happy dev.
+One more commit before bed.
+Merge conflicts build character.
+Stack Overflow is my senior engineer.
+Ctrl+C, Ctrl+V, Ctrl+Pray.
+There are 10 types of people: those who know binary and those who don't.
+404: Motivation not found.
+503: Brain temporarily unavailable.
+200 OK. Ship it.
+My code doesn't have bugs, it has surprise features.
+Semicolons: small character, big drama.
+Tabs vs spaces? Just be consistent.
+I don't always test my code, but when I do, it's in production.
+Latency is the silent killer.
+Ping first, panic later.
+Uptime is a lifestyle.
+Monitor everything. Assume nothing.
+If it's not monitored, it's not in production.
+Logs, metrics, traces. Know your system.
+The network is reliable. Said no one ever.
+Packets don't lie.
+A good sysadmin is a lazy sysadmin.
+Documentation is a love letter to your future self.
+Learn the fundamentals. Frameworks come and go.
+Every expert was once a beginner who didn't quit.
+Small commits, big progress.
+Consistency beats intensity.
+Ship it, learn, iterate.
+Done is better than perfect.
+Build things. Break things. Learn things.
+Curiosity is the best debugger.
+The terminal is your playground.
+Stay hungry, stay compiling.
+Errors are just lessons in red text.
+Read the error message. Then read it again.
+Google the error, but understand the fix.
+Your future self is your most important user.
+Fail fast, recover faster.
+Think in systems, not in scripts.
+Measure twice, deploy once.
+Data beats opinions.
+Keep your dependencies close and your versions pinned.
+It compiled on the first try. Something is wrong.
+Every bug fixed is a skill unlocked.
+Code is poetry that machines can read.
+Hello, World! Still the best first step.
+Keep learning. The stack never stops changing.
+EOF
+exec bash
