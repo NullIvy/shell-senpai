@@ -6,13 +6,19 @@ Repo ini berisi seluruh dotfiles yang saya pakai di Windows Terminal untuk Power
 
 ## Preview
 
-Tangkapan layar pertama adalah mode play, yaitu tampilan santai dengan foto karakter bernuansa neon biru di samping panel.
+Dua tangkapan layar pertama adalah mode play, yaitu tampilan santai dengan foto karakter bernuansa neon biru di samping panel. Sapaan dan quote di bawahnya selalu berganti setiap kali panel digambar ulang.
 
-![Mode play](screenshots/v2-play.png)
+![Mode play](screenshots/v2-play-1.png)
 
-Tangkapan layar kedua adalah mode work, yaitu tampilan yang lebih netral untuk kantor dengan logo Windows bercahaya dan kalimat motivasi kerja.
+![Mode play](screenshots/v2-play-2.png)
 
-![Mode work](screenshots/v2-work.png)
+Dua tangkapan layar berikutnya adalah mode work, yaitu tampilan yang lebih netral untuk kantor. Logo Windows dipilih secara acak setiap kali layar dibersihkan, lalu ditemani kalimat motivasi kerja.
+
+![Mode work](screenshots/v2-work-1.png)
+
+![Mode work](screenshots/v2-work-2.png)
+
+Kalau penasaran dengan edisi pertama yang bertema Ocean Deep, tangkapan layarnya masih tersimpan di [pwsh7.png](screenshots/pwsh7.png), [windows-powershell.png](screenshots/windows-powershell.png), dan [cmd.png](screenshots/cmd.png).
 
 ## Tentang Edisi Ini
 
