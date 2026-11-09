@@ -1,70 +1,62 @@
 format = """
-[\ue0b6](#0B3C5D)\
-$os\
-$username\
-[\ue0b0](bg:#1D6A96 fg:#0B3C5D)\
-$directory\
-[\ue0b0](bg:#2E8BC0 fg:#1D6A96)\
-$git_branch\
-$git_status\
-$python\
-$nodejs\
-[\ue0b0](bg:#4FB3D9 fg:#2E8BC0)\
-$time\
-[\ue0b4](fg:#4FB3D9)\
-$cmd_duration\
-$line_break$character"""
-
-[os]
-disabled = false
-style = "bg:#0B3C5D fg:#E0F7FA"
-format = "[ $symbol]($style)"
-[os.symbols]
-Windows = "\uf17a"
+$username[ \u203a ](#2A5A80)$directory$git_branch$git_status$python$nodejs
+$character"""
+right_format = """$cmd_duration$status$time"""
+add_newline = true
 
 [username]
 show_always = true
-style_user = "bg:#0B3C5D fg:#E0F7FA bold"
-style_root = "bg:#0B3C5D fg:#E0F7FA bold"
-format = "[ $user ]($style)"
+style_user = "bold #4FB3D9"
+style_root = "bold #FF6B6B"
+format = "[$user]($style)"
 
 [directory]
-style = "bg:#1D6A96 fg:#E0F7FA"
-format = "[ \uf07c $path ]($style)"
-truncation_length = 2
-fish_style_pwd_dir_length = 1
-truncation_symbol = "…/"
+style = "#DFF6FF"
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 4
+truncation_symbol = "\u2026 \u203a "
+home_symbol = "~"
+
+[directory.substitutions]
+"\\" = " \u203a "
+"/" = " \u203a "
 
 [git_branch]
-symbol = "\ue725"
-style = "bg:#2E8BC0 fg:#0B3C5D"
-format = "[ $symbol $branch ]($style)"
+symbol = "\ue725 "
+style = "#5FD7FF"
+format = "[ $symbol$branch]($style)"
 
 [git_status]
-style = "bg:#2E8BC0 fg:#0B3C5D"
-format = "[($all_status$ahead_behind )]($style)"
+style = "#F0C674"
+format = "[( $all_status$ahead_behind)]($style) "
 
 [python]
-symbol = "\ue73c"
-style = "bg:#2E8BC0 fg:#0B3C5D"
-format = "[ $symbol ($version)(\\($virtualenv\\)) ]($style)"
+style = "#2A8FD0"
+format = "[ \ue73c $version]($style)"
 
 [nodejs]
-symbol = "\ue718"
-style = "bg:#2E8BC0 fg:#0B3C5D"
-format = "[ $symbol ($version) ]($style)"
+style = "#2A8FD0"
+format = "[ \ue718 $version]($style)"
+
+[cmd_duration]
+min_time = 2000
+style = "#F0C674"
+format = "[took $duration  ]($style)"
+
+[status]
+disabled = false
+success_symbol = "\u2714"
+symbol = "\u2718 $status"
+success_style = "#7DDC8C"
+style = "#FF6B6B"
+format = "[$symbol  ]($style)"
 
 [time]
 disabled = false
 time_format = "%H:%M"
-style = "bg:#4FB3D9 fg:#0B3C5D"
-format = "[ \uf017 $time ]($style)"
-
-[cmd_duration]
-min_time = 2000
-style = "fg:#85D4E3"
-format = "[ took $duration]($style)"
+style = "#2A5A80"
+format = "[\uf017 $time]($style)"
 
 [character]
-success_symbol = "[ ❯](bold #85D4E3)"
-error_symbol = "[ ❯](bold #FF6B6B)"
+success_symbol = "[\u276f](bold #5FD7FF)"
+error_symbol = "[\u276f](bold #FF6B6B)"

@@ -5,6 +5,8 @@
   "copyFormatting": "none",
   "copyOnSelect": false,
   "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "initialCols": 136,
+  "initialRows": 50,
   "keybindings": [
     {
       "id": "Terminal.CopyToClipboard",
@@ -26,22 +28,23 @@
   ],
   "profiles": {
     "defaults": {
+      "backgroundImage": "%USERPROFILE%\\.config\\fastfetch\\logo-bw.png",
+      "backgroundImageAlignment": "bottomRight",
+      "backgroundImageOpacity": 0.06,
+      "backgroundImageStretchMode": "uniform",
+      "bellStyle": "none",
+      "colorScheme": "Ocean Deep",
+      "cursorShape": "bar",
       "font": {
-        "face": "JetBrainsMono Nerd Font",
+        "face": "JetBrainsMono Nerd Font, MS Gothic",
         "size": 11
       },
-      "colorScheme": "Ocean Deep",
-      "opacity": 92,
-      "useAcrylic": true,
-      "padding": "14, 10",
-      "cursorShape": "bar",
       "intenseTextStyle": "bright",
+      "opacity": 92,
+      "padding": "14, 10",
       "scrollbarState": "hidden",
-      "bellStyle": "none",
-      "backgroundImage": "%USERPROFILE%\\.config\\fastfetch\\logo-bw.png",
-      "backgroundImageOpacity": 0.06,
-      "backgroundImageAlignment": "bottomRight",
-      "backgroundImageStretchMode": "uniform"
+      "useAcrylic": true,
+      "experimental.pixelShaderPath": "__HOME__\\.config\\windows-terminal\\neon-key.hlsl"
     },
     "list": [
       {
@@ -75,59 +78,102 @@
         "source": "Windows.Terminal.VisualStudio"
       },
       {
+        "commandline": "pwsh.exe -NoLogo",
         "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
         "hidden": false,
         "name": "PowerShell",
-        "source": "Windows.Terminal.PowershellCore",
-        "commandline": "pwsh.exe -NoLogo"
+        "source": "Windows.Terminal.PowershellCore"
+      },
+      {
+        "hidden": false,
+        "experimental.pixelShaderPath": "",
+        "backgroundImageAlignment": "topRight",
+        "experimental.retroTerminalEffect": false,
+        "backgroundImage": "%USERPROFILE%\\.claude\\claude-mascot-pad.png",
+        "tabTitle": "Claude Code",
+        "icon": "%USERPROFILE%\\.claude\\claude-mascot.png",
+        "name": "Claude Code",
+        "commandline": "pwsh.exe -NoLogo -NoProfile -File \"%USERPROFILE%\\.claude\\rifi-launcher.ps1\"",
+        "guid": "{c1a0dec0-de00-4c1a-9e0d-000000000001}",
+        "backgroundImageStretchMode": "none",
+        "backgroundImageOpacity": 0.7,
+        "colorScheme": "Claude Dark",
+        "useAcrylic": false,
+        "opacity": 100
       }
     ]
   },
   "schemes": [
     {
-      "name": "Ocean Deep",
       "background": "#0D1B2A",
-      "foreground": "#E0F7FA",
-      "cursorColor": "#4FB3D9",
-      "selectionBackground": "#1D6A96",
       "black": "#0B1622",
-      "red": "#FF6B6B",
-      "green": "#7DDC8C",
-      "yellow": "#F0C674",
       "blue": "#4FB3D9",
-      "purple": "#C792EA",
-      "cyan": "#85D4E3",
-      "white": "#CFE8F0",
       "brightBlack": "#3E5466",
-      "brightRed": "#FF8A8A",
-      "brightGreen": "#9FE8AB",
-      "brightYellow": "#F5D68F",
       "brightBlue": "#7CC8E8",
-      "brightPurple": "#D7AEF2",
       "brightCyan": "#B1F0F7",
-      "brightWhite": "#FFFFFF"
+      "brightGreen": "#9FE8AB",
+      "brightPurple": "#D7AEF2",
+      "brightRed": "#FF8A8A",
+      "brightWhite": "#FFFFFF",
+      "brightYellow": "#F5D68F",
+      "cursorColor": "#4FB3D9",
+      "cyan": "#85D4E3",
+      "foreground": "#E0F7FA",
+      "green": "#7DDC8C",
+      "name": "Ocean Deep",
+      "purple": "#C792EA",
+      "red": "#FF6B6B",
+      "selectionBackground": "#1D6A96",
+      "white": "#CFE8F0",
+      "yellow": "#F0C674"
+    },
+    {
+      "brightRed": "#E88F6F",
+      "foreground": "#E6E2D8",
+      "white": "#E6E2D8",
+      "brightCyan": "#ECDCC0",
+      "green": "#A3B18A",
+      "brightBlue": "#E88F6F",
+      "brightWhite": "#FAF9F5",
+      "brightBlack": "#6B5A4E",
+      "brightGreen": "#B8C4A0",
+      "blue": "#D97757",
+      "brightPurple": "#D9967C",
+      "cyan": "#E0C9A6",
+      "background": "#1A1915",
+      "selectionBackground": "#4A3A30",
+      "name": "Claude Dark",
+      "brightYellow": "#F0C48A",
+      "yellow": "#E8B06A",
+      "cursorColor": "#D97757",
+      "purple": "#C77D5F",
+      "black": "#1A1915",
+      "red": "#D9645A"
     }
   ],
+  "tabWidthMode": "titleLength",
+  "theme": "Ocean",
   "themes": [
     {
       "name": "Ocean",
-      "window": {
-        "useMica": true,
-        "applicationTheme": "dark"
+      "tab": {
+        "background": "#0D1B2AFF",
+        "iconStyle": "default",
+        "showCloseButton": "hover",
+        "unfocusedBackground": "#0B162200"
       },
       "tabRow": {
-        "unfocusedBackground": "#0B1622FF",
-        "background": "#0B1622FF"
+        "background": "#0B1622FF",
+        "unfocusedBackground": "#0B1622FF"
       },
-      "tab": {
-        "unfocusedBackground": "#0B162200",
-        "showCloseButton": "hover",
-        "background": "#0D1B2AFF"
+      "window": {
+        "applicationTheme": "dark",
+        "experimental.rainbowFrame": false,
+        "frame": null,
+        "unfocusedFrame": null,
+        "useMica": true
       }
     }
-  ],
-  "theme": "Ocean",
-  "initialCols": 130,
-  "initialRows": 34,
-  "tabWidthMode": "titleLength"
+  ]
 }
+

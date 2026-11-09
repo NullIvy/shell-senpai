@@ -17,8 +17,9 @@ Remove-Item Alias:clear -Force -ErrorAction SilentlyContinue
 Remove-Item Alias:cls   -Force -ErrorAction SilentlyContinue
 function clear { Clear-Host; fetch }
 function cls   { Clear-Host; fetch }
-fetch
 
 . "$HOME\.config\powershell\colors.ps1"
 
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+. "$HOME\.config\powershell\cyberdeck.ps1"
+fetch
