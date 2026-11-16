@@ -1,5 +1,6 @@
 function global:senpai-release {
   param([Parameter(Mandatory)][string]$Version, [Parameter(Mandatory)][string]$Title, [string]$Notes = '')
+  if ("$Title $Notes" -match '^Judul Update$|^Judul update aslimu$|^Catatan singkat|aslimu') { Write-Host '✖ Judul/catatan masih contoh, ganti dulu' -ForegroundColor Red; return }
   Push-Location "$HOME\shell-senpai"
   try {
     git pull --rebase --autostash -q
@@ -21,6 +22,8 @@ function global:senpai-release {
     gh @a
   } finally { Pop-Location }
 }
+
+
 
 
 
