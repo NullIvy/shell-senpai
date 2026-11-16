@@ -42,6 +42,9 @@ Ada satu prinsip yang saya pegang selama membangun edisi ini, yaitu efek visual 
 | Kartu Network | Adapter Wi-Fi, IP, gateway, DNS, status DHCP, dan domain atau workgroup |
 | IP Tersamar | Semua alamat IP otomatis ditampilkan seperti 192.xxx.xxx.xxx/xx supaya aman saat screenshot dibagikan |
 | Mode Work dan Play | Perintah work menampilkan logo Windows acak dan motivasi kerja, sedangkan play menampilkan foto karakter |
+| Status Antivirus | Defender, umur signature, dan hasil scan terakhir tampil di kartu Status, lengkap dengan penanda merah kalau ada ancaman atau signature basi |
+| Mode Ringkas | Kartu Software dan Hardware dilebur menjadi kartu Machine tiga baris supaya panel muat di layar laptop, dan perintah full membuka versi lengkapnya |
+| Icon Tab Dinamis | Icon tab Windows Terminal ikut berganti, wajah karakter saat play dan logo jendela acak saat work |
 | Neon Ramah Mata | Glow hanya menyala di gambar sehingga teks tetap tajam |
 | Prompt Breadcrumb | Prompt bergaya breadcrumb VS Code yang menampilkan user, folder, dan branch Git |
 | CLI Modern | Menu Tab interaktif, pencarian history dengan Ctrl R, cat berwarna, top, df, git diff ala editor, dan perintah myip |
@@ -49,7 +52,7 @@ Ada satu prinsip yang saya pegang selama membangun edisi ini, yaitu efek visual 
 
 ## Struktur Repo
 
-Folder powershell berisi cyberdeck.ps1 sebagai mesin panel, profile.ps1 sebagai titik masuk PowerShell, dan colors.ps1 yang mewarnai output command sehari hari. Folder fastfetch berisi koleksi quote santai, quote motivasi kerja, dan sapaan khusus mode work. Folder starship menyimpan prompt breadcrumb, folder clink berisi script yang membuat Command Prompt ikut memanggil panel yang sama, dan folder windows-terminal menyimpan pengaturan terminal beserta shader neon. Terakhir ada folder tools yang berisi make-logo.ps1 untuk mengubah gambar pilihanmu menjadi logo neon.
+Folder powershell berisi cyberdeck.ps1 sebagai mesin panel, profile.ps1 sebagai titik masuk PowerShell, dan colors.ps1 yang mewarnai output command sehari hari. Folder fastfetch berisi koleksi quote santai, quote motivasi kerja, dan sapaan khusus mode work. Folder starship menyimpan prompt breadcrumb, folder clink berisi script yang membuat Command Prompt ikut memanggil panel yang sama, dan folder windows-terminal menyimpan pengaturan terminal beserta shader neon. Terakhir ada folder tools yang berisi make-logo.ps1 untuk mengubah gambar pilihanmu menjadi logo neon, serta make-tab-icons.ps1 untuk membuat icon tab mode play dan work.
 
 ## Instalasi
 
@@ -90,13 +93,14 @@ Langkah berikutnya adalah memilih gambar untuk logo mode play. Gambar sengaja ti
 
 ```powershell
 .\tools\make-logo.ps1 -Source "C:\lokasi\gambar-pilihanmu.png"
+.\tools\make-tab-icons.ps1
 ```
 
 Terakhir, tutup semua jendela Windows Terminal lalu buka lagi. Pembukaan pertama butuh sekitar dua detik karena data hardware sedang dikumpulkan, dan setelah itu Shell Senpai akan langsung menyambutmu di tab mana pun.
 
 ## Cara Pakai
 
-Ada beberapa perintah yang akan sering kamu pakai. Perintah work mengganti panel ke mode kantor dengan logo Windows acak dan kalimat motivasi kerja, sedangkan play mengembalikan foto karakter. Mode yang dipilih tersimpan, jadi tetap terpakai saat terminal dibuka lagi. Perintah cls atau clear menggambar ulang panel dengan sapaan dan quote baru. Kalau sedang butuh melihat alamat IP asli, misalnya saat praktikum jaringan, jalankan $global:CDShowIP = $true lalu cls, dan untuk menyamarkannya lagi cukup ganti true menjadi false. Perintah myip juga selalu menampilkan IP lokal dan publik secara lengkap.
+Ada beberapa perintah yang akan sering kamu pakai. Perintah work mengganti panel ke mode kantor dengan logo Windows acak dan kalimat motivasi kerja, sedangkan play mengembalikan foto karakter. Mode yang dipilih tersimpan, jadi tetap terpakai saat terminal dibuka lagi. Secara bawaan panel tampil ringkas, ketik full untuk melihat semua detail hardware dan compact untuk kembali ke versi ringkas. Perintah cls atau clear menggambar ulang panel dengan sapaan dan quote baru. Kalau sedang butuh melihat alamat IP asli, misalnya saat praktikum jaringan, jalankan $global:CDShowIP = $true lalu cls, dan untuk menyamarkannya lagi cukup ganti true menjadi false. Perintah myip juga selalu menampilkan IP lokal dan publik secara lengkap.
 
 ## Kustomisasi
 
