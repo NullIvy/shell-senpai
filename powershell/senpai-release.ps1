@@ -13,7 +13,7 @@ function global:senpai-release {
     if ($hit) { $hit | Format-Table Path, LineNumber, Line -AutoSize; Write-Host '✖ Data pribadi terdeteksi, rilis dibatalkan' -ForegroundColor Red; return }
     if (-not (git status --porcelain)) { Write-Host '• Tidak ada perubahan untuk dirilis' -ForegroundColor Yellow; return }
     git status --short
-    if ((Read-Host "Lanjut rilis $Version? (y/n)") -ne 'y') { Write-Host 'Dibatalkan'; return }
+    if ((Read-Host "Lanjut rilis ${Version}? (y/n)") -ne 'y') { Write-Host 'Dibatalkan'; return }
     git add .; git commit -q -m "feat: $Version $Title"; git push -q
     git tag -a $Version -m $Title; git push -q origin $Version
     $a = @('release', 'create', $Version, '--title', "$Version — $Title", '--latest', '--generate-notes')
@@ -21,5 +21,6 @@ function global:senpai-release {
     gh @a
   } finally { Pop-Location }
 }
+
 
 
