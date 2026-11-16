@@ -118,19 +118,22 @@ function Show-Cyberdeck([string]$ShellName) {
     if ($global:CDShowIP) { return $s }
     [regex]::Replace($s, '\b(\d{1,3})(?:\.\d{1,3}){3}(/\d{1,2})?\b', { param($m) $m.Groups[1].Value + '.xxx.xxx.xxx' + $(if ($m.Groups[2].Success) { '/xx' }) })
   }
-  function bar([double]$p, [switch]$inv) {
+  function bar([double]$p, [switch]$inv, [double]$redAt = 93) {
     $p = [math]::Max(0, [math]::Min(100, $p)); $n = [int][math]::Round($p / 10)
     if ($inv) { $k = if ($p -ge 50) { $cG } elseif ($p -ge 20) { $cY } else { $cP } }
-    else      { $k = if ($p -lt 70) { $cG } elseif ($p -lt 93) { $cY } else { $cP } }
-    "$k$('━' * $n)$Dk$('─' * (10 - $n))$cR $k$('{0,3}%' -f [int]$p)$cR"
+    else      { $k = if ($p -gt $redAt) { $cP } elseif ($p -lt 70) { $cG } else { $cY } }
+    "$k$('▮' * $n)$Dk$('▯' * (10 - $n))$cR $k$('{0,3}%' -f [int]$p)$cR"
   }
   function gut { $ln.n++; "$cDm$('{0:D2}' -f $ln.n) $cGt│$cR " }
   function card([string]$title, [string]$rgb, $rows) {
     if ($ln.s) { line (gut) }; $ln.s = 1
     $cm = @{ SYSTEM = 'the os you are living in'; SOFTWARE = 'tools that keep you alive'; HARDWARE = 'the metal under your fingers'; STATUS = 'how hard senpai is working'; NETWORK = 'where your packets travel'; MACHINE = 'the deck at a glance' }
-    line ((gut) + "$cAc$E[1m### $title$E[22m  $cDm// $($cm[$title])$cR")
-    foreach ($r in $rows) { $g = gut; if ("$($r[2])".Contains($cP)) { $g = $g.Replace("$cGt│", "$cP▌"); $ln.w++ }; line ($g + "  $cAc$($r[0])$cR  $cW$($r[1].PadRight(10))$cR $($r[2])") }
+    $hdr = "── $title // $($cm[$title]) "; $pad = [math]::Max(2, 56 - $hdr.Length)
+    line ((gut) + "$cGt╭$cAc$E[1m$hdr$E[22m$cGt$('─' * $pad)↗─╮$cR")
+    foreach ($r in $rows) { $g = gut; if ("$($r[2])".Contains($cP)) { $g = $g.Replace("$cGt│", "$cP▌"); $ln.w++ }; line ($g + "$cGt│$cR $cAc$($r[0])$cR  $cW$($r[1].PadRight(10))$cR $($r[2])") }
+    line ((gut) + "$cGt╰$('─' * 58)╯$cR")
   }
+  Start-Sleep -Milliseconds 150
   function boot {
     $b = c '79;179;217'; $k = c '133;212;227'; $d = c '45;90;125'
     [Console]::Write("`n  $d[ ${b}SHELL SENPAI v1.0 $d// ${k}NOTICE ME, SENPAI $d]$cR`n")
@@ -235,6 +238,9 @@ function Show-Cyberdeck([string]$ShellName) {
   line ((gut) + "$cAc> ${cW}hello $env:USERNAME$cV, $(if ($cdWork) { 'ready to build from' } else { 'notice me from' }) $cAc$env:COMPUTERNAME$cR")
   line ((gut) + "$cAc> $cV$E[3m$($greet.ToLower())$E[23m$cR")
   line (gut)
+  line ((gut) + "$E[48;2;12;38;64m$E[38;2;0;255;255m$E[1m // $E[38;2;165;245;255m$E[3m$q $E[23m$cR")
+  line (gut)
+  line (gut)
   $top = $mods.Count
 
   card 'SYSTEM' '79;179;217' @(
@@ -271,7 +277,7 @@ function Show-Cyberdeck([string]$ShellName) {
   )
   }
   $st = New-Object System.Collections.ArrayList
-  [void]$st.Add(@($i.mem, 'RAM', ((bar ($used / $tot * 100)) + ' ' + (val $ramT 34))))
+  [void]$st.Add(@($i.mem, 'RAM', ((bar ($used / $tot * 100) -redAt 50) + ' ' + (val $ramT 34))))
   foreach ($d in $drv) {
     $t = $d.Used + $d.Free
     $dt = "{0:N0} / {1:N0} GB · {2:N0} GB free" -f ($d.Used / 1GB), ($t / 1GB), ($d.Free / 1GB)
@@ -284,6 +290,22 @@ function Show-Cyberdeck([string]$ShellName) {
     [void]$st.Add(@($i.bat, 'Battery', ((bar $bp -inv) + ' ' + (val $bs 34))))
   }
   [void]$st.Add(@($i.proc, 'Procs', (val "$((Get-Process).Count) running")))
+  $tempVal = "$cDm● " + (val 'N/A · run as Admin for temp' 40)
+  try {
+    $tc = $null
+    $tz = Get-CimInstance -Namespace root/wmi -ClassName MSAcpi_ThermalZoneTemperature -ErrorAction SilentlyContinue | Select-Object -First 1
+    if ($tz -and $tz.CurrentTemperature) { $tc = [math]::Round(($tz.CurrentTemperature - 2732) / 10, 1) }
+    else {
+      $tz2 = Get-CimInstance -Namespace root/cimv2 -ClassName Win32_PerfFormattedData_Counters_ThermalZoneInformation -ErrorAction SilentlyContinue | Select-Object -First 1
+      if ($tz2 -and $tz2.Temperature -gt 200) { $tc = [math]::Round($tz2.Temperature - 273.15, 1) }
+    }
+    if ($null -ne $tc) {
+      if     ($tc -ge 80) { $tempVal = "$cP⚠ " + (val "${tc}°C · OVERHEAT!" 40) }
+      elseif ($tc -ge 60) { $tempVal = "$cY● " + (val "${tc}°C · Warm / Under Load" 40) }
+      else                { $tempVal = "$Ok● " + (val "${tc}°C · Cool / Normal" 40) }
+    }
+  } catch {}
+  [void]$st.Add(@([char]0xf2c9, 'Temp', $tempVal))
   function ago($iso) { if (-not $iso) { return $null }; $s = (Get-Date) - [datetime]$iso
     if ($s.TotalHours -lt 1) { 'just now' } elseif ($s.TotalDays -lt 1) { "$([int]$s.TotalHours)h ago" } else { "$([int][math]::Floor($s.TotalDays)) day$(if ([math]::Floor($s.TotalDays) -ge 2) { 's' }) ago" } }
   if (-not $av) { [void]$st.Add(@([char]0xf132, 'Antivirus', ("$cDm" + 'Checking…' + $cR))) }
@@ -315,9 +337,8 @@ function Show-Cyberdeck([string]$ShellName) {
     @($i.dom,  'Domain',  (val ("$($hw.domain)" + $(if ($sfx) { " · $($sfx[0])" }))))
   )
   line (gut)
-  line ((gut) + "$cDm// $cV$E[3m$q$E[23m$cR")
   $nu = if ($up) { [int]$up.count } else { 0 }
-  $sb = " $([char]0xf489) $ShellName   $([char]0xf00d) $([int]$ln.w)   $([char]0xf062) $nu   Ln $($ln.n), Col 1   UTF-8   CRLF   senpai.ps1"
+  $sb = " ● ONLINE  │  $([char]0xf489) $ShellName  │  $([char]0xf00d) $([int]$ln.w)  │  $([char]0xf062) $nu  │  $(Get-Date -Format 'HH:mm') WIB"
   $sb = if ($sb.Length -gt 74) { $sb.Substring(0, 73) + "…" } else { $sb.PadRight(74) }
   line ("$E[48;2;18;55;100m$cW" + $sb + "$cR")
 

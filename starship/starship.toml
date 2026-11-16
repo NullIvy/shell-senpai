@@ -1,42 +1,63 @@
 format = """
-$username[ \u203a ](#2A5A80)$directory$git_branch$git_status$python$nodejs
+[](#123652)\
+$username\
+[](bg:#1B4B72 fg:#123652)\
+$directory\
+[](fg:#1B4B72 bg:#256395)\
+$git_branch\
+$git_status\
+[](fg:#256395)\
+$python$nodejs
 $character"""
+
 right_format = """$cmd_duration$status$time"""
 add_newline = true
 
 [username]
 show_always = true
-style_user = "bold #4FB3D9"
-style_root = "bold #FF6B6B"
-format = "[$user]($style)"
+style_user = "bold #A5F5FF bg:#123652"
+style_root = "bold #FF6B6B bg:#123652"
+format = "[  $user ]($style)"
 
 [directory]
-style = "#DFF6FF"
-format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold #DFF6FF bg:#1B4B72"
+format = "[  $path ]($style)[$read_only]($read_only_style)"
 truncation_length = 4
-truncation_symbol = "\u2026 \u203a "
+truncation_symbol = "… › "
 home_symbol = "~"
 
 [directory.substitutions]
-"\\" = " \u203a "
-"/" = " \u203a "
+"\\" = " › "
+"/" = " › "
 
 [git_branch]
-symbol = "\ue725 "
-style = "#5FD7FF"
-format = "[ $symbol$branch]($style)"
+symbol = " "
+style = "bold #FFE58F bg:#256395"
+format = "[ $symbol$branch ]($style)"
 
 [git_status]
-style = "#F0C674"
-format = "[( $all_status$ahead_behind)]($style) "
+style = "bold #7DDC8C bg:#256395"
+format = "[($all_status$ahead_behind )]($style)"
 
 [python]
-style = "#2A8FD0"
-format = "[ \ue73c $version]($style)"
+style = "#5FD7FF"
+format = "[ via  $version]($style)"
 
 [nodejs]
-style = "#2A8FD0"
-format = "[ \ue718 $version]($style)"
+style = "#7DDC8C"
+format = "[ via  $version]($style)"
+
+[golang]
+style = "#5FD7FF"
+format = "[ via  $version]($style)"
+
+[rust]
+style = "#F0C674"
+format = "[ via  $version]($style)"
+
+[docker_context]
+style = "#4FB3D9"
+format = "[ via  $context]($style)"
 
 [cmd_duration]
 min_time = 2000
@@ -45,8 +66,8 @@ format = "[took $duration  ]($style)"
 
 [status]
 disabled = false
-success_symbol = "\u2714"
-symbol = "\u2718 $status"
+success_symbol = "✔"
+symbol = "✘ $status"
 success_style = "#7DDC8C"
 style = "#FF6B6B"
 format = "[$symbol  ]($style)"
@@ -54,9 +75,9 @@ format = "[$symbol  ]($style)"
 [time]
 disabled = false
 time_format = "%H:%M"
-style = "#2A5A80"
-format = "[\uf017 $time]($style)"
+style = "#4FB3D9"
+format = "[ $time]($style)"
 
 [character]
-success_symbol = "[\u276f](bold #5FD7FF)"
-error_symbol = "[\u276f](bold #FF6B6B)"
+success_symbol = "[❯](bold #00FFFF)"
+error_symbol = "[❯](bold #FF6B6B)"

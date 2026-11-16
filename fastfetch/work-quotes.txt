@@ -1,40 +1,50 @@
-Build the thing you wish existed.
-Clarity is a feature. Ship it daily.
-Great work is small work, done relentlessly.
-Solve the real problem, not the loud one.
-Make it simple. Then make it remarkable.
-Curiosity compounds faster than talent.
-Every system was once a bold experiment.
-Progress over perfection, every single day.
-Ask why five times before you build once.
-Your best idea is hiding behind the next question.
-Ship, measure, learn, repeat.
-Quality is a habit, not a deadline.
-Clients remember how easy you made it.
-Small automations, massive freedom.
-Turn every incident into a better process.
-Document today, thank yourself tomorrow.
-Innovation is persistence with a plan.
-Be the engineer who leaves things better.
-Think in systems, deliver in steps.
-Listen first. Architect second.
-Data beats opinions. Empathy beats data.
-Simplicity scales. Complexity breaks.
-Today's experiment is tomorrow's standard.
-Focus is the most underrated skill.
-Do the hard thing first, then celebrate.
-Build trust the way you build uptime: daily.
-Every great solution starts with a good question.
-Be curious about the problem, calm about the fix.
-Make the complex feel effortless.
-Lead with value, follow with technology.
-One meaningful commit beats ten busy hours.
-Your work is a message. Make it clear.
-Security is not a product. It's a mindset.
-The best answer is often a better question.
-Grow 1% every day. Let the wins compound.
-Own the outcome, not just the task.
-Design for people, engineer for scale.
-Ideas are cheap. Execution is the edge.
-Stay hungry for feedback.
-Done well beats done twice.
+BGP flap jam 3 pagi? Daijoubu, ngopi disit lur.
+Firewall-e ora tembus, tapi mentalku sing kena DDoS.
+Zero-day terus, kudu sabar ben ora crash kaya server.
+NOC lagi chaos, tapi aura tetap sigma, no cap.
+SOC alert merah kabeh, atiku tetep ikigai.
+Fullstack dev: frontend estetik, backend lagi nangis.
+Kabel rack data center rapi, uripku kapan rapi?
+Packet loss 100%, kaya chat-e de'e sing ora dibales.
+Solution architect: gambar kotak, panah, terus berdoa.
+Mental health iku kaya uptime, kudu dijaga ben ora down.
+Ojo lali backup, penyesalan iku ora ana CTRL+Z-ne.
+Latency tinggi? Mungkin semesta lagi butuh reboot.
+Socrates wae bingung nek kon debug microservices.
+Ganbatte, kodingan error iku mung ujian dari semesta.
+Root cause-e ketemu, tapi jiwaku sing butuh patching.
+Server room adem banget, tapi pikiranku lagi thermal throttling.
+Data center 99.99% uptime, mentalku 50% lagi buffering.
+Ora usah FOMO, jalan masing-masing kaya routing table.
+Skibidi-nya bug production, muncul pas Jumat sore.
+Kudu touch grass, aja mung mantengin Grafana terus.
+Stoikisme mode: error ya fix, ora usah overthinking.
+SLA 99.9%, tapi jam turuku cuma 404 Not Found.
+Enkripsi atimu, ben ora kena social engineering.
+Fullstack iku seni nyambungke API karo kewarasan.
+Yare yare daze, DNS maning sing dadi biang kerok.
+Rizz-nya sysadmin: terminal bersih, log-e ora ana merah.
+Nietzsche ngomong: tatap abyss, aja lali cek SIEM.
+Load balancer wae butuh istirahat, opo maning menungso.
+Inyong lagi mode zen, kabeh incident tak hadapi kalem.
+Overthinking iku kaya infinite loop, kudu di-break.
+VLAN wis dipisah, kenangan karo de'e kapan dipisah?
+Shoganai, nek wis di-push force ya tinggal tawakal.
+Arsitektur sistem apik, tapi arsitektur turuku berantakan.
+Threat hunting terus, tapi red flag-e de'e ora ketemu.
+Ojo panik, kabeh masalah ana solusine kaya StackOverflow.
+Mental breakdown? Tarik nafas, clear cache pikiranmu.
+Beban kerja overload, butuh auto-scaling buat kewarasan.
+Kopi item + terminal biru = kombinasi anti burnout.
+Descartes: aku mikir, mula aku ana. Aku ngoding, mula ngelu.
+Zero trust architecture, termasuk percaya omongan mantan.
+Kudu tetep slay, senajan server lagi high CPU usage.
+Ngapak pride: ngoding tetep jalan, medok tetep kental.
+Ping-e 1ms, tapi responmu ke aku kok timeout terus?
+Refactoring urip: buang sing toxic, simpen sing clean.
+Wabi-sabi: kode ora kudu sempurna, sing penting jalan.
+SOC analyst mode: curiga kabeh, kecuali kopi pagi.
+NOC life: ngeliatin grafik ijo luwih adem daripada pantai.
+Aja lali istirahat, kowe dudu daemon sing jalan 24/7.
+Muga-muga dina iki zero incident, zero drama, full cuan.
+Kokoro-nya lagi fragile, kudu di-wrap try-catch.
